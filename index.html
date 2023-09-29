@@ -1,3 +1,208 @@
-This is my sample tsting df
+<!-- wordpress -->
 
-This changes gain 
+<!-- wordpress theme integration -->
+
+1 Xampp install
+
+2 WordPress zip file install
+
+3 Underscores.me (website) html file name pest after installing file after cut and xampp file,htdocs,WordPress,wp-content,themes after pest file 
+
+4 chorme open and search localhost/phpmyadmin/ after create database name after privilege btn click after add user account click 
+
+5 chrome search localhost/WordPress filename enter/wp-admin/ 
+Notice -Password (admin)
+
+6 Html,css file copy after xampp, htdocs, WordPress, wp-content, themes,html file name folder past
+
+7 WordPress open and appearance click themes file active
+
+8 header, front page , footer edit
+
+<!-- header site-logo,nav-menu and footer-menu,footer-1,2,3  code  -->
+image and head link path use> <?php echo get_template_directory_uri(); ?>/
+<div class="site-logo">
+    <?php the_custom_logo(); ?>
+    </div>
+    <nav class="navbar">
+        <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'menu-1',
+                    'menu_id'        => 'primary-menu',
+                )
+            );
+        ?>
+    </nav>
+    <!-- footer -->
+    <ul>
+        <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'footer-menubar_1',
+                    'menu_id'        => 'footer-menu_1',
+                )
+            );
+        ?>
+    </ul>
+
+    <div class="footer__content">
+        <?php the_custom_logo(); ?>
+        <?php dynamic_sidebar( 'footer-1' ); ?>
+    </div>
+
+    <!-- function page code (nav-menu,footer-menu)  -->
+    register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', 'kanha_girl' ),
+			'footer-menubar_1' => esc_html__( 'footer-menu_1', 'kanha_girl' ),
+			'footer-menubar_2' => esc_html__( 'footer-menu_2', 'kanha_girl' ),
+		)
+	);
+
+    register_sidebar(
+		array(
+			'name'          => esc_html__( 'footer 1', 'kanha_girl' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'kanha_girl' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+    <!-- nav-menu specific page  -->
+
+    template folder create >
+
+    service-page.php creat file > page.php file path copy to this file pest
+
+    service file fast line change name > Template Name: service Template 
+
+    website page last extra content remove to code remove single page and service page
+    get_sidebar();
+    
+
+    <!-- full dynamic website -->
+    
+    plugin > ACF 
+    
+    acf website all code available 
+
+    text code > 
+    <?php if( get_field('arrivals_heading') ): ?>   
+       <h2><?php the_field('arrivals_heading'); ?></h2>
+    <?php endif; ?>
+
+    img code >
+    <a href="#"><?php 
+        $image = get_field('product_img1');
+        $size = 'full'; // (thumbnail, medium, large, full or custom size)
+        if( $image ) {
+            echo wp_get_attachment_image( $image, $size );
+        }
+    ?> </a>
+    Notice: wordpress site acf plugin Return Format > id img select and Library > all select 
+
+    <!--how to use acf wordpress page  -->
+    acf Field Groups create (home page) > setting > Show this field group if > page type select ,fornt page end
+    .navbar page >  setting > Show this field group if > page template select ,je nav-menu na page nu name hoy ae end
+
+
+<!-- blog (post) -->
+.......
+
+index.php
+template-parts > content-blog.php
+                  (details) click-content.php
+archive.php (backend)
+
+<!-- clone post  -->
+...............
+
+plugin > Duplicate Post
+
+<!-- woocommerce -->
+
+plugin > woocommerce 
+
+website > woocommerce.com
+Shortcodes included with WooCommerce
+
+<!-- product_categories -->
+
+<section class="section section-categories-home">
+    <div class="wrap">
+        <?php echo do_shortcode('[product_categories ids="21,23,24" limit="3" columns="3"]'); ?>
+    </div>
+</section>
+
+note: cetegorise ids img 1,2,3 line to line set
+
+<!-- best selleing -->
+<?php echo do_shortcode('[products limit="2" columns="2" ids="334,333" best_selling="true" ]'); ?>
+
+note: all product page show product, css style> section yaa div class name and best selling class name use -edit them style  
+
+<!-- woocommerce page use  -->
+.1 content-product-cat.php
+.2 content-product.php
+.3 content-single-product.php
+.4 archive-product.php
+
+note: section and wrap use 
+
+<!-- wordpress CPT -->
+function code (Event)
+
+add_action('init', 'codex_event_init');
+function codex_event_init()
+{
+    $labels = array(
+        'name'               => _x('Events', 'post type general name', 'houseum'),
+        'singular_name'      => _x('Event', 'post type singular name', 'houseum'),
+        'menu_name'          => _x('Events', 'admin menu', 'houseum'),
+        'name_admin_bar'     => _x('Event', 'add new on admin bar', 'houseum'),
+        'add_new'            => _x('Add new', 'event', 'houseum'),
+        'add_new_item'       => __('Add new event', 'houseum'),
+        'new_item'           => __('New event', 'houseum'),
+        'edit_item'          => __('Edit event', 'houseum'),
+        'view_item'          => __('View event', 'houseum'),
+        'all_items'          => __('All events', 'houseum'),
+        'search_items'       => __('Search event', 'houseum'),
+        'parent_item_colon'  => __('Parent event:', 'houseum'),
+        'not_found'          => __('No event found.', 'houseum'),
+        'not_found_in_trash' => __('No event found in Trash.', 'houseum')
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'description'        => __('Description.', 'houseum'),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'events'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'exclude_from_search' => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor')
+    );
+
+    register_post_type('event', $args);
+    flush_rewrite_rules();
+}
+
+page creat...
+archive> archive-evant.php
+singel>  singel-event.php
+
+<!-- elementor -->
+
+-hello elementor them and elementor plugin
+
+install and use slider....
