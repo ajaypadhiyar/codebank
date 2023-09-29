@@ -1,0 +1,67 @@
+vendors.bundle.css
+
+wp_enqueue_style( 'radiusmanagement-vendors',  get_template_directory_uri() . '/css/vendors.bundle.css', array(), _S_VERSION );
+
+vendors.bundle.js
+scripts.bundle.js
+
+wp_enqueue_script( 'radiusmanagement-vendors', get_template_directory_uri() . '/js/vendors.bundle.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'radiusmanagement-scripts', get_template_directory_uri() . '/js/scripts.bundle.js', array(), _S_VERSION, true );
+
+coustam logo
+
+<?php the_custom_logo(); ?>
+
+<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/
+Home url : <?php echo esc_url( home_url( '/' ) ); ?>
+
+navbar
+
+<nav class="navbar">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'container' => false,
+							'menu_id' => 'primary-menu',
+						)
+					);
+					?>
+pages templates				</nav>
+
+ * Template Name: About Us 
+
+blog 
+
+archive.php
+
+single.php
+
+lenth
+
+(function.php)
+
+/**
+ * Filter the excerpt length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+
+ function wpdocs_custom_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+function wpdocs_excerpt_more( $more ) {
+	if ( ! is_single() ) {
+		$more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+			get_permalink( get_the_ID() ),
+			__( 'Read More', 'textdomain' )
+		);
+	}
+
+	return $more;
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
