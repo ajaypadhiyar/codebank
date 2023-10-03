@@ -1,0 +1,36 @@
+text
+
+<?php if (get_field('banner_heading')): ?>
+                    <h1 class="mb-70 text-white">
+                        <?php the_field('banner_heading'); ?>
+                    </h1>
+<?php endif; ?>
+
+img
+
+ <?php $image = get_field('about_img');
+                            $size = 'full';
+                            if ($image) {
+                                echo wp_get_attachment_image($image, $size);
+                            } ?>
+
+link 
+
+ <a href="#">
+                                    <?php $image = get_field('twitter');
+                                    $size = 'full';
+                                    if ($image) {
+                                        echo wp_get_attachment_image($image, $size);
+                                    } ?><a>
+
+short code
+
+   <?php echo do_shortcode('[product_category category="T-shirt" per_page="12" columns="4" orderby="default" order="asc" operator="in"]'); ?>
+
+css and js link
+
+<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/
+
+logo url
+
+Home url : <?php echo esc_url( home_url( '/' ) ); ?>
