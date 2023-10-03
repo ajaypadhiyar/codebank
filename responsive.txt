@@ -1,0 +1,282 @@
+$(".menu-toggle").click(function () {
+    $(this).toggleClass("on");
+    $(".navbar").slideToggle();
+  });
+
+<div class="menu-toggle">
+                    <span class="bar1"></span>
+                    <span class="bar2"></span>
+                    <span class="bar3"></span>
+                </div>
+.menu-toggle {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40px;
+    height: 26px !important;
+    z-index: 9;
+    position: relative;
+    top: 0;
+    margin-left: auto;
+    display: none;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 4px;
+    background: #3E3F66;
+    margin: 0px auto;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+}
+
+.menu-toggle.on .bar1 {
+    transform: rotate(45deg) translate(0px, 5px);
+}
+
+.menu-toggle.on .bar2 {
+    opacity: 0;
+}
+
+.menu-toggle.on .bar3 {
+    transform: rotate(-45deg) translate(7px, -12px);
+}
+
+
+    @media only screen and (max-width: 1279px) {}
+    
+    @media only screen and (max-width: 1023px) {
+        .col-md-1 {
+            max-width: 8.33333333%;
+            flex: 0 0 8.33333333%;
+        }
+        .col-md-2 {
+            max-width: 16.66666667%;
+            flex: 0 0 16.66666667%;
+        }
+        .col-md-3 {
+            max-width: 25%;
+            flex: 0 0 25%;
+        }
+        .col-md-4 {
+            max-width: 33.33333333%;
+            flex: 0 0 33.33333333%;
+        }
+        .col-md-5 {
+            max-width: 41.66666667%;
+            flex: 0 0 41.66666667%;
+        }
+        .col-md-6 {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .col-md-7 {
+            max-width: 58.33333333%;
+            flex: 0 0 58.33333333%;
+        }
+        .col-md-8 {
+            max-width: 66.66666667%;
+            flex: 0 0 66.66666667%;
+        }
+        .col-md-9 {
+            max-width: 75%;
+            flex: 0 0 75%;
+        }
+        .col-md-10 {
+            max-width: 83.33333333%;
+            flex: 0 0 83.33333333%;
+        }
+        .col-md-11 {
+            max-width: 91.66666667%;
+            flex: 0 0 91.66666667%;
+        }
+        .col-md-12 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        .navbar {
+            display: none;
+            max-height: 100vh;
+            overflow-y: auto;
+            position: absolute;
+            width: 60%;
+	    top: 100%;
+            right: 0;
+            z-index: 9;
+        }
+        .navbar ul {
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            padding: 20px 15px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px #ede9fe;
+        }
+        .navbar ul li a {
+            color: #000;
+        }
+        .menu-toggle {
+            display: flex;
+        }
+        .bar1,
+        .bar2,
+        .bar3 {
+            display: block;
+            margin: 5px;
+        }
+    }
+    
+    @media only screen and (max-width: 767px) {
+        .col-sm-1 {
+            max-width: 8.33333333%;
+            flex: 0 0 8.33333333%;
+        }
+        .col-sm-2 {
+            max-width: 16.66666667%;
+            flex: 0 0 16.66666667%;
+        }
+        .col-sm-3 {
+            max-width: 25%;
+            flex: 0 0 25%;
+        }
+        .col-sm-4 {
+            max-width: 33.33333333%;
+            flex: 0 0 33.33333333%;
+        }
+        .col-sm-5 {
+            max-width: 41.66666667%;
+            flex: 0 0 41.66666667%;
+        }
+        .col-sm-6 {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .col-sm-7 {
+            max-width: 58.33333333%;
+            flex: 0 0 58.33333333%;
+        }
+        .col-sm-8 {
+            max-width: 66.66666667%;
+            flex: 0 0 66.66666667%;
+        }
+        .col-sm-9 {
+            max-width: 75%;
+            flex: 0 0 75%;
+        }
+        .col-sm-10 {
+            max-width: 83.33333333%;
+            flex: 0 0 83.33333333%;
+        }
+        .col-sm-11 {
+            max-width: 91.66666667%;
+            flex: 0 0 91.66666667%;
+        }
+        .col-sm-12 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 577px) {
+        .col-xs-1 {
+            max-width: 8.33333333%;
+            flex: 0 0 8.33333333%;
+        }
+        .col-xs-2 {
+            max-width: 16.66666667%;
+            flex: 0 0 16.66666667%;
+        }
+        .col-xs-3 {
+            max-width: 25%;
+            flex: 0 0 25%;
+        }
+        .col-xs-4 {
+            max-width: 33.33333333%;
+            flex: 0 0 33.33333333%;
+        }
+        .col-xs-5 {
+            max-width: 41.66666667%;
+            flex: 0 0 41.66666667%;
+        }
+        .col-xs-6 {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .col-xs-7 {
+            max-width: 58.33333333%;
+            flex: 0 0 58.33333333%;
+        }
+        .col-xs-8 {
+            max-width: 66.66666667%;
+            flex: 0 0 66.66666667%;
+        }
+        .col-xs-9 {
+            max-width: 75%;
+            flex: 0 0 75%;
+        }
+        .col-xs-10 {
+            max-width: 83.33333333%;
+            flex: 0 0 83.33333333%;
+        }
+        .col-xs-11 {
+            max-width: 91.66666667%;
+            flex: 0 0 91.66666667%;
+        }
+        .col-xs-12 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 479px) {
+        .col-xxs-1 {
+            max-width: 8.33333333%;
+            flex: 0 0 8.33333333%;
+        }
+        .col-xxs-2 {
+            max-width: 16.66666667%;
+            flex: 0 0 16.66666667%;
+        }
+        .col-xxs-3 {
+            max-width: 25%;
+            flex: 0 0 25%;
+        }
+        .col-xxs-4 {
+            max-width: 33.33333333%;
+            flex: 0 0 33.33333333%;
+        }
+        .col-xxs-5 {
+            max-width: 41.66666667%;
+            flex: 0 0 41.66666667%;
+        }
+        .col-xxs-6 {
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+        .col-xxs-7 {
+            max-width: 58.33333333%;
+            flex: 0 0 58.33333333%;
+        }
+        .col-xxs-8 {
+            max-width: 66.66666667%;
+            flex: 0 0 66.66666667%;
+        }
+        .col-xxs-9 {
+            max-width: 75%;
+            flex: 0 0 75%;
+        }
+        .col-xxs-10 {
+            max-width: 83.33333333%;
+            flex: 0 0 83.33333333%;
+        }
+        .col-xxs-11 {
+            max-width: 91.66666667%;
+            flex: 0 0 91.66666667%;
+        }
+        .col-xxs-12 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 369px) {}
