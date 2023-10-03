@@ -27,15 +27,15 @@ navbar
 						)
 					);
 					?>
-pages templates				</nav>
+pages templates folder				</nav>
 
  * Template Name: About Us 
 
 blog 
 
-archive.php
+archive.php add section
 
-single.php
+single.php   blog Customization
 
 lenth
 
